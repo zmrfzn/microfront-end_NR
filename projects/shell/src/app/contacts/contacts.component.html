@@ -1,0 +1,8 @@
+<p>
+    Select Language:
+    <select (change)="useLang($any($event.target).value)">
+        <option *ngFor="let item of supportLanguages">{{item}}</option>
+    </select>
+</p>
+
+<p>{{'contacts.para' | translate}}</p>

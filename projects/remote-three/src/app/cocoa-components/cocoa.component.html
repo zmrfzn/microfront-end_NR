@@ -1,0 +1,27 @@
+
+<p>
+    Select Language:
+    <select (change)="useLang($any($event.target).value)">
+        <option *ngFor="let item of supportLanguages">{{item}}</option>
+    </select>
+</p>
+<div class="cux-container">
+    <h3>{{'home.cux-button' | translate}}</h3>
+    <cux-button [label]="'home.cux-button-danger' | translate"
+        [type]="'danger'">
+    </cux-button>
+    <cux-button [label]="'home.cux-button-primary' | translate"
+    [type]="'primary'" (onClick)="sendMsg()">
+</cux-button>
+</div><!-- cux-container -->
+
+<div class="cux-container">
+    <h2>{{'home.cux-breadcrumb' | translate}}</h2>
+    <cux-breadcrumb [breadcrumbTitles]="breadcrumbTitles"> </cux-breadcrumb>
+</div>
+
+<div class="cux-container">
+    <h2>{{'home.cux-select' | translate}}</h2>
+    <cux-checkbox [items]="items" [selectedValue]="selectedValue" [align]="align">
+    </cux-checkbox>
+</div>

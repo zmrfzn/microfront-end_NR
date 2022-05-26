@@ -1,0 +1,10 @@
+{
+	"home": {
+		"Caption": "Dashboard 2",
+		"paragraph": "Some quick example text to build on the panel title and make up the bulk of the panel's content.",
+		"btn-txt": "Message Bus"
+	},
+	"contacts": {
+		"para":"contacts works!"
+	}
+}

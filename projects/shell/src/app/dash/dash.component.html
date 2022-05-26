@@ -1,0 +1,15 @@
+<p>
+    Select Language:
+    <select (change)="useLang($any($event.target).value)">
+        <option *ngFor="let item of supportLanguages">{{item}}</option>
+    </select>
+</p>
+<div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{'home.Caption' | translate}}</h5>
+            <p class="card-text">{{'home.paragraph' | translate}}</p>            
+            <cux-button [label]="'home.btn-txt' | translate" [type]="'primary'" (onClick)="onLinkClick()"></cux-button>
+        </div>
+    </div>
+</div>

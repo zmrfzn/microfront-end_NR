@@ -1,0 +1,10 @@
+{
+    "home" : {
+        "Caption": "Tableau de bord 2",
+        "paragraph": "Quelques exemples de texte rapides pour s'appuyer sur le titre du panneau et constituer l'essentiel du contenu du panneau.",
+        "btn-txt":"Bus de messages"
+    },
+    "contacts": {
+		"para":"les contacts fonctionnent !"
+	}
+}

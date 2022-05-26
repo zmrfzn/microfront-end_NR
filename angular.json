@@ -1,0 +1,590 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "2bb64feb-ec36-4451-914b-47251732336a"
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "shell": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/shell",
+      "sourceRoot": "projects/shell/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/shell",
+            "index": "projects/shell/src/index.html",
+            "main": "projects/shell/src/main.ts",
+            "polyfills": "projects/shell/src/polyfills.ts",
+            "tsConfig": "projects/shell/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/shell/src/favicon.ico",
+              "projects/shell/src/assets"
+            ],
+            "styles": [
+              "projects/shell/src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ],
+            "extraWebpackConfig": "projects/shell/webpack.config.js"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/shell/src/environments/environment.ts",
+                  "with": "projects/shell/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "extraWebpackConfig": "projects/shell/webpack.prod.config.js"
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "shell:build",
+            "port": 4200,
+            "extraWebpackConfig": "projects/shell/webpack.config.js"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "shell:build:production",
+              "extraWebpackConfig": "projects/shell/webpack.prod.config.js"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "shell:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "projects/shell/src/test.ts",
+            "polyfills": "projects/shell/src/polyfills.ts",
+            "tsConfig": "projects/shell/tsconfig.spec.json",
+            "karmaConfig": "projects/shell/karma.conf.js",
+            "assets": [
+              "projects/shell/src/favicon.ico",
+              "projects/shell/src/assets"
+            ],
+            "styles": [
+              "projects/shell/src/styles.scss"
+            ],
+            "scripts": [],
+            "extraWebpackConfig": "projects/shell/webpack.config.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/shell/tsconfig.app.json",
+              "projects/shell/tsconfig.spec.json",
+              "projects/shell/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/shell/e2e/protractor.conf.js",
+            "devServerTarget": "shell:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "shell:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "remote-one": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/remote-one",
+      "sourceRoot": "projects/remote-one/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/remote-one",
+            "index": "projects/remote-one/src/index.html",
+            "main": "projects/remote-one/src/main.ts",
+            "polyfills": "projects/remote-one/src/polyfills.ts",
+            "tsConfig": "projects/remote-one/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/remote-one/src/favicon.ico",
+              "projects/remote-one/src/assets"
+            ],
+            "styles": [
+              "projects/remote-one/src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ],
+            "extraWebpackConfig": "projects/remote-one/webpack.config.js"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/remote-one/src/environments/environment.ts",
+                  "with": "projects/remote-one/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "extraWebpackConfig": "projects/remote-one/webpack.prod.config.js"
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "remote-one:build",
+            "port": 4201,
+            "extraWebpackConfig": "projects/remote-one/webpack.config.js"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "remote-one:build:production",
+              "extraWebpackConfig": "projects/remote-one/webpack.prod.config.js"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "remote-one:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "projects/remote-one/src/test.ts",
+            "polyfills": "projects/remote-one/src/polyfills.ts",
+            "tsConfig": "projects/remote-one/tsconfig.spec.json",
+            "karmaConfig": "projects/remote-one/karma.conf.js",
+            "assets": [
+              "projects/remote-one/src/favicon.ico",
+              "projects/remote-one/src/assets"
+            ],
+            "styles": [
+              "projects/remote-one/src/styles.scss"
+            ],
+            "scripts": [],
+            "extraWebpackConfig": "projects/remote-one/webpack.config.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/remote-one/tsconfig.app.json",
+              "projects/remote-one/tsconfig.spec.json",
+              "projects/remote-one/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/remote-one/e2e/protractor.conf.js",
+            "devServerTarget": "remote-one:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "remote-one:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "shared": {
+      "projectType": "library",
+      "root": "projects/shared",
+      "sourceRoot": "projects/shared/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/shared/tsconfig.lib.json",
+            "project": "projects/shared/ng-package.json",
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/shared/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/shared/src/test.ts",
+            "tsConfig": "projects/shared/tsconfig.spec.json",
+            "karmaConfig": "projects/shared/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/shared/tsconfig.lib.json",
+              "projects/shared/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "remote-two": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/remote-two",
+      "sourceRoot": "projects/remote-two/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/remote-two",
+            "index": "projects/remote-two/src/index.html",
+            "main": "projects/remote-two/src/main.ts",
+            "polyfills": "projects/remote-two/src/polyfills.ts",
+            "tsConfig": "projects/remote-two/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/remote-two/src/favicon.ico",
+              "projects/remote-two/src/assets"
+            ],
+            "styles": [
+              "projects/remote-two/src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ],
+            "extraWebpackConfig": "projects/remote-two/webpack.config.js"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/remote-two/src/environments/environment.ts",
+                  "with": "projects/remote-two/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "extraWebpackConfig": "projects/remote-two/webpack.prod.config.js"
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "remote-two:build",
+            "port": 4202,
+            "extraWebpackConfig": "projects/remote-two/webpack.config.js"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "remote-two:build:production",
+              "extraWebpackConfig": "projects/remote-two/webpack.prod.config.js"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "remote-two:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "projects/remote-two/src/test.ts",
+            "polyfills": "projects/remote-two/src/polyfills.ts",
+            "tsConfig": "projects/remote-two/tsconfig.spec.json",
+            "karmaConfig": "projects/remote-two/karma.conf.js",
+            "assets": [
+              "projects/remote-two/src/favicon.ico",
+              "projects/remote-two/src/assets"
+            ],
+            "styles": [
+              "projects/remote-two/src/styles.scss"
+            ],
+            "scripts": [],
+            "extraWebpackConfig": "projects/remote-two/webpack.config.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/remote-two/tsconfig.app.json",
+              "projects/remote-two/tsconfig.spec.json",
+              "projects/remote-two/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/remote-two/e2e/protractor.conf.js",
+            "devServerTarget": "remote-two:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "remote-two:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "remote-three": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/remote-three",
+      "sourceRoot": "projects/remote-three/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/remote-three",
+            "index": "projects/remote-three/src/index.html",
+            "main": "projects/remote-three/src/main.ts",
+            "polyfills": "projects/remote-three/src/polyfills.ts",
+            "tsConfig": "projects/remote-three/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/remote-three/src/favicon.ico",
+              "projects/remote-three/src/assets"
+            ],
+            "styles": [
+              "projects/remote-three/src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ],
+            "extraWebpackConfig": "projects/remote-three/webpack.config.js"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/remote-three/src/environments/environment.ts",
+                  "with": "projects/remote-three/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "extraWebpackConfig": "projects/remote-three/webpack.prod.config.js"
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "remote-three:build",
+            "port": 4203,
+            "extraWebpackConfig": "projects/remote-three/webpack.config.js"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "remote-three:build:production",
+              "extraWebpackConfig": "projects/remote-three/webpack.prod.config.js"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "remote-three:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "projects/remote-three/src/test.ts",
+            "polyfills": "projects/remote-three/src/polyfills.ts",
+            "tsConfig": "projects/remote-three/tsconfig.spec.json",
+            "karmaConfig": "projects/remote-three/karma.conf.js",
+            "assets": [
+              "projects/remote-three/src/favicon.ico",
+              "projects/remote-three/src/assets"
+            ],
+            "styles": [
+              "projects/remote-three/src/styles.scss"
+            ],
+            "scripts": [],
+            "extraWebpackConfig": "projects/remote-three/webpack.config.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/remote-three/tsconfig.app.json",
+              "projects/remote-three/tsconfig.spec.json",
+              "projects/remote-three/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/remote-three/e2e/protractor.conf.js",
+            "devServerTarget": "remote-three:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "remote-three:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "shell"
+}

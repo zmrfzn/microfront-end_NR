@@ -1,0 +1,7 @@
+<div class="border-right border-dark" id="sidebar-wrapper">
+    <div class="sidebar-heading title-bg text-white">{{title | uppercase }}</div>
+    <div class="list-group list-group-flush">
+      <a *ngFor="let menu of items"
+      class="list-group-item list-group-item-action li-bg border-right" [routerLink]="menu?.route">{{menu?.name | titlecase}}</a>
+    </div>
+  </div>
