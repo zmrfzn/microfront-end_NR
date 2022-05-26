@@ -1,27 +1,25 @@
-# Cfm-shell
+# Micro front-end demo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.14.
+This project contains Angular = `11.2.14` & React = `17.0.1`
 
-## Development server
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- node 12 or 14 
+- yarn 1.22
 
-## Code scaffolding
+You need yarn to use the AngularCLI11/webpack5 opt-in!
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Start and Run
 
-## Build
+1. ``yarn`` -- Install dependencies
+2. ``yarn run start:rone`` Start the remote-one application with MFE
+3. Navigate to ``http://localhost:4201`` to launch the remote-one
+4.  ``yarn run start:shell`` Start the shell application 
+5. Navigate to ``http://localhost:4200`` to launch the shell
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Start React MFE
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. ``cd projects\m4e-react``
+2. ``yarn`` -- Install dependencies
+3. ``yarn start`` -- Start React app
+4. Navigate to ``http://localhost:4204`` to launch the React app
