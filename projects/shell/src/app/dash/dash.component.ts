@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CocoaCore } from '@mitel-internal/cocoa';
 import { TranslateService } from '@ngx-translate/core';
 
 
@@ -12,7 +11,7 @@ export class DashComponent implements OnInit {
 
   supportLanguages = ['english', 'french', 'tamil', 'hindi'];
 
-  constructor(private cocoa:CocoaCore, private translateService: TranslateService) {
+  constructor(private translateService: TranslateService) {
     this.translateService.addLangs(this.supportLanguages);
     this.translateService.setDefaultLang('english');
     const browserlang = this.translateService.getBrowserLang();
@@ -24,7 +23,7 @@ export class DashComponent implements OnInit {
   }
 
   onLinkClick(){
-    this.cocoa.messageBus.send('shell_app1','From App Shell/Module: shell_app1');
+    window.alert('shell_app1 => From App Shell/Module: shell_app1');
   }
 
   useLang(lang: string) {

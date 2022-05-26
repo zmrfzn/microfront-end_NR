@@ -1,59 +1,104 @@
-.left-nav{
-    background: #15325f;
-    height: 100vh;
-}
+// .left-nav{
+//     background: #15325f;
+//     height: 100vh;
+// }
 
-.nav li{
-    border-bottom: 1px solid #4BD5A3;
-}
+// .nav li{
+//     border-bottom: 1px solid #4BD5A3;
+// }
 
-.nav li a{
-    color: #fff;
-    font-size: 13px;
-    font-weight: 600;
-    outline: none;
-    padding: 0 20px;
-    line-height: 50px;
-}
+// .nav li a{
+//     color: #fff;
+//     font-size: 13px;
+//     font-weight: 600;
+//     outline: none;
+//     padding: 0 20px;
+//     line-height: 50px;
+// }
 
-.nav li a:hover{
-    background: #11284c;
-}
+// .nav li a:hover{
+//     background: #11284c;
+// }
+
+// body {
+//     overflow-x: hidden;
+//   }
+
+//   #empty-nav{
+//     min-height: 40.5px;
+// }
+//   #page-content-wrapper {
+//     min-width: 100vw;
+
+//     .nav-bg {
+//       background-color: #308868;
+//     }
+
+//     .container-fluid {
+//       padding: 20px
+//     }
+//   }
+  
+//   #wrapper.toggled #sidebar-wrapper {
+//     margin-left: 0;
+//   }
+  
+//   @media (min-width: 768px) {
+//     #sidebar-wrapper {
+//       margin-left: 0;
+//     }
+  
+//     #page-content-wrapper {
+//       min-width: 0;
+//       width: 100%;
+//     }
+  
+//     #wrapper.toggled #sidebar-wrapper {
+//       margin-left: -15rem;
+//     }
+//   }
 
 body {
-    overflow-x: hidden;
-  }
-
-  #empty-nav{
-    min-height: 40.5px;
+  font-family: 'Comfortaa', cursive;
+  padding-top: 80px;
+  padding-left: 10px;
 }
-  #page-content-wrapper {
-    min-width: 100vw;
 
-    .nav-bg {
-      background-color: #308868;
-    }
+.header {
+margin-bottom: 90px;
+}
 
-    .container-fluid {
-      padding: 20px
-    }
-  }
-  
-  #wrapper.toggled #sidebar-wrapper {
-    margin-left: 0;
-  }
-  
-  @media (min-width: 768px) {
-    #sidebar-wrapper {
-      margin-left: 0;
-    }
-  
-    #page-content-wrapper {
-      min-width: 0;
-      width: 100%;
-    }
-  
-    #wrapper.toggled #sidebar-wrapper {
-      margin-left: -15rem;
-    }
-  }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+.container-fluid{
+  width: 100vh;
+}

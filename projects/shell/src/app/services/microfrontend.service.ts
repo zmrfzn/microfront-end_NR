@@ -35,7 +35,7 @@ export class MicrofrontendService {
         exposedModule: 'SimpleDynamic',
 
         // For Routing, enabling us to ngFor over the microfrontends and dynamically create links for the routes
-        displayName: 'simple dynamic module (R1)',
+        displayName: 'MFE1 (Simple)',
         routePath: 'remote-one',
         ngModuleName: 'SimpleDynamicModule',
       },
@@ -46,32 +46,21 @@ export class MicrofrontendService {
         exposedModule: 'DynamicRouting',
 
         // For Routing, enabling us to ngFor over the microfrontends and dynamically create links for the routes
-        displayName: 'module internal routing (R1)',
+        displayName: 'mfe1 (internal routes)',
         routePath: 'rone-internal-routing',
         ngModuleName: 'DynamicModule',
       },
-      {
-        // For Loading
-        remoteEntry: 'http://localhost:4202/remoteEntry.js',
-        remoteName: 'remoteTwo',
-        exposedModule: 'SharedHTTP',
+      // {
+      //   // For Loading
+      //   remoteEntry: 'http://localhost:4202/remoteEntry.js',
+      //   remoteName: 'remoteTwo',
+      //   exposedModule: 'SharedHTTP',
 
-        // For Routing, enabling us to ngFor over the microfrontends and dynamically create links for the routes
-        displayName: 'Shared HTTP (R2)',
-        routePath: 'rtwo-shared-http',
-        ngModuleName: 'SharedHttpModule',
-      },
-      {
-        // For Loading
-        remoteEntry: 'http://localhost:4203/remoteEntry.js',
-        remoteName: 'remoteThree',
-        exposedModule: 'SharedCocoa',
-
-        // For Routing, enabling us to ngFor over the microfrontends and dynamically create links for the routes
-        displayName: 'Shared Cocoa (R3)',
-        routePath: 'rthree-shared-cocoa',
-        ngModuleName: 'CocoaComponentsModule',
-      }
+      //   // For Routing, enabling us to ngFor over the microfrontends and dynamically create links for the routes
+      //   displayName: 'Shared HTTP (R2)',
+      //   routePath: 'rtwo-shared-http',
+      //   ngModuleName: 'SharedHttpModule',
+      // }
     ];
   }
 }

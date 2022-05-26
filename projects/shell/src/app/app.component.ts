@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
-import { CocoaCore } from '@mitel-internal/cocoa';
 import { navItems } from 'projects/shared/src/public-api';
 import { MicrofrontendService } from './services/microfrontend.service';
-
-import * as manifest from './cocoa-manifest.json';
 
 @Component({
   selector: 'app-root',
@@ -14,9 +11,9 @@ export class AppComponent {
   title = 'shell';
   menus: navItems[] = [];
 
-  constructor(private microSvc: MicrofrontendService,private cocoa:CocoaCore) {
+  constructor(private microSvc: MicrofrontendService) {
     this.menus = [
-      { name: 'dashboard', route: '/' },
+      // { name: 'dashboard', route: '/' },
       { name: 'contacts', route: '/contacts' }
     ]
   }
@@ -30,15 +27,9 @@ export class AppComponent {
       });
     });
 
-    this.cocoa.register(manifest);
+    this.menus.push({name:'MFE4', route:'mfe4'});
 
-    this.cocoa.messageBus.listen('shared_cocoa1').subscribe(msg => {
-      alert(`Received from shared: ${msg.data}`);
-    });
-
-    this.cocoa.messageBus.listen('shell_app1').subscribe(msg => {
-      alert(`Received from app/module: ${msg.data}`);
-    });
+  
 
   }
 
