@@ -6,8 +6,6 @@
     "start:shell": "ng serve -o --poll=1000 --project=shell",
     "start:rone": "ng serve -o --poll=1000 --project=remote-one",
     "start:rtwo": "ng serve -o --poll=1000 --project=remote-two",
-    "start:rthree": "ng serve -o --poll=2000 --project=remote-three",
-    "start:all": "concurrently \"npm run start:shell\" \"npm run start:rone\" \"npm run start:rtwo\" \"npm run start:rthree\"",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
